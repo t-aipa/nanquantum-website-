@@ -1,7 +1,7 @@
 /*
  * NΛN Quantum Technologies
  * Main Stylesheet
- * © 2025 NΛN Quantum Technologies
+ * 2025 NΛN Quantum Technologies
  */
 
 /* ===== Base Styles ===== */
@@ -205,7 +205,7 @@ p {
 }
 
 /* ===== Header ===== */
-.site-header {
+.site-header, .main-header {
   padding: var(--space-md) 0;
   background-color: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -214,7 +214,7 @@ p {
   z-index: 100;
 }
 
-.site-header .container {
+.site-header .container, .main-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -254,6 +254,69 @@ p {
 .main-nav {
   display: flex;
   align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: var(--space-lg);
+}
+
+.nav-item a {
+  color: var(--dark-gray);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--quantum-blue);
+  transition: var(--transition-standard);
+}
+
+.nav-item a:hover {
+  color: var(--quantum-blue);
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+}
+
+.nav-item.active a {
+  color: var(--quantum-blue);
+}
+
+.nav-item.active a::after {
+  width: 100%;
+}
+
+.nav-item.nav-cta a {
+  color: var(--white);
+  background-color: var(--quantum-blue);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+}
+
+.nav-item.nav-cta a:hover {
+  background-color: var(--integrity-teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item.nav-cta a::after {
+  display: none;
 }
 
 .menu {
